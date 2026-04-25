@@ -16,25 +16,30 @@
     <!-- Texto -->
     <div appScrollReveal class="space-y-6">
       <p class="text-white/60 text-lg leading-relaxed">
-        Soy un Backend Developer apasionado por construir sistemas
-        robustos y escalables. Me especializo en arquitecturas de
-        microservicios, APIs de alto rendimiento y bases de datos.
+        Analista de Sistemas con más de 9 años de experiencia en sistemas financieros de alta criticidad. Trabajo en Prisma Medios de Pago, donde desarrollo y mantengo soluciones que procesan +10M transacciones diarias.
       </p>
       <p class="text-white/60 text-lg leading-relaxed">
-        Disfruto resolver problemas complejos con soluciones simples
-        y elegantes. Creo que el buen código es aquel que otros
-        pueden entender y mantener fácilmente.
+        Me especializo en COBOL y sistemas legacy, pero mi pasión va más allá. Disfruto el desarrollo web moderno con Angular y Tailwind CSS, creo en el código limpio, la mejora continua y en seguir aprendiendo constantemente. Este portfolio es parte de ese camino.
       </p>
-      <a href="#contact" class="btn-glow inline-block mt-4">
-        Hablemos
+      <a href="/documentos/cv-kevin.pdf" download
+        class="btn-glow inline-flex items-center gap-2 mt-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Descargar CV
       </a>
     </div>
 
     <!-- Stats -->
-    <div appScrollReveal class="grid grid-cols-3 gap-6">
+    <div appScrollReveal class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
       @for (stat of stats; track stat.label) {
-        <div class="glass-card p-6 text-center">
-          <p class="font-display text-4xl font-bold gradient-text mb-2">
+        <div class="glass-card p-4 text-center">
+          <p class="font-display font-bold gradient-text mb-2"
+            [class.text-4xl]="stat.value.length <= 3"
+            [class.text-2xl]="stat.value.length > 3">
             {{ stat.value }}
           </p>
           <p class="font-mono text-xs text-white/40 uppercase tracking-wider">

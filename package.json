@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:tailwind": "tailwindcss -i ./src/styles.scss -o ./src/tailwind-output.css --minify",
+    "build:prod": "npm run build:tailwind && ng build"
   },
   "prettier": {
     "printWidth": 100,
@@ -26,13 +28,16 @@
     "@angular/common": "^21.1.0",
     "@angular/compiler": "^21.1.0",
     "@angular/core": "^21.1.0",
+    "@angular/fire": "^20.0.1",
     "@angular/forms": "^21.1.0",
     "@angular/platform-browser": "^21.1.0",
     "@angular/router": "^21.1.0",
+    "firebase": "^12.12.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^21.0.3",
     "@angular/build": "^21.1.4",
     "@angular/cli": "^21.1.4",
     "@angular/compiler-cli": "^21.1.0",

@@ -11,8 +11,8 @@ import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal';
 })
 export class AboutComponent {
   stats = [
-    { value: '3+',  label: 'Años de experiencia' },
-    { value: '20+', label: 'Proyectos completados' },
-    { value: '10+', label: 'Tecnologías dominadas' },
+    { value: '9+'      , label: 'Años de experiencia' },
+    { value: 'Prisma'  , label: 'Empresa actual'      },
+    { value: 'COBOL'   , label: 'Especialidad'        },
   ];
 }
