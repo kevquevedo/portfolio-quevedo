@@ -26,17 +26,23 @@
               </a>
             </li>
             }
+
             <!-- Contacto especial -->
             <li>
-                <a
+              <a
                 href="#contact"
                 class="font-mono text-xs tracking-wider uppercase px-4 py-2 rounded-full
-                        border border-accent-cyan/40 text-accent-cyan
-                        hover:bg-accent-cyan/10 hover:border-accent-cyan
-                        transition-all duration-300"
-                >
+                      border transition-all duration-300"
+                [class.border-accent-cyan]="activeSection() === 'contact'"
+                [class.text-accent-cyan]="activeSection() === 'contact'"
+                [class.bg-accent-cyan/20]="activeSection() === 'contact'"
+                [class.shadow-glow]="activeSection() === 'contact'"
+                [class.border-accent-cyan/40]="activeSection() !== 'contact'"
+                [class.text-accent-cyan/60]="activeSection() !== 'contact'"
+                [class.bg-transparent]="activeSection() !== 'contact'"
+              >
                 Contacto
-                </a>
+              </a>
             </li>
         </ul>
 
