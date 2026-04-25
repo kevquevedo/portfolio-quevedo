@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent implements OnInit {
 
   private taglines = [
-    'Analista Programador.',
+    'Analista de Sistemas.',
     'COBOL Mainframe.',
     'Angular.',
     'Tailwind CSS.',

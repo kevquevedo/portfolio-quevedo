@@ -31,7 +31,13 @@
                    text-white placeholder-white/20 font-body
                    focus:outline-none focus:border-accent-cyan/50
                    transition-colors duration-300"
+            [class.border-red-500/50]="form.get('name')?.invalid && form.get('name')?.touched"
           />
+          @if (form.get('name')?.invalid && form.get('name')?.touched) {
+            <p class="font-mono text-xs text-red-400/80 mt-1">
+              * El nombre es requerido
+            </p>
+          }
         </div>
 
         <!-- Email -->
@@ -47,7 +53,19 @@
                    text-white placeholder-white/20 font-body
                    focus:outline-none focus:border-accent-cyan/50
                    transition-colors duration-300"
+            [class.border-red-500/50]="form.get('email')?.invalid && form.get('email')?.touched"
           />
+          @if (form.get('email')?.touched) {
+            @if (form.get('email')?.hasError('required')) {
+              <p class="font-mono text-xs text-red-400/80 mt-1">
+                * El email es requerido
+              </p>
+            } @else if (form.get('email')?.hasError('email')) {
+              <p class="font-mono text-xs text-red-400/80 mt-1">
+                * Ingresá un email válido
+              </p>
+            }
+          }
         </div>
 
         <!-- Mensaje -->
@@ -63,18 +81,51 @@
                    text-white placeholder-white/20 font-body resize-none
                    focus:outline-none focus:border-accent-cyan/50
                    transition-colors duration-300"
+            [class.border-red-500/50]="form.get('message')?.invalid && form.get('message')?.touched"
           ></textarea>
+          @if (form.get('message')?.touched) {
+            @if (form.get('message')?.hasError('required')) {
+              <p class="font-mono text-xs text-red-400/80 mt-1">
+                * El mensaje es requerido
+              </p>
+            } @else if (form.get('message')?.hasError('minlength')) {
+              <p class="font-mono text-xs text-red-400/80 mt-1">
+                * El mensaje debe tener al menos 10 caracteres
+              </p>
+            }
+          }
         </div>
+
+        <!-- Error de envío -->
+        @if (error()) {
+          <p class="font-mono text-xs text-red-400 tracking-wider">
+            ⚠ Hubo un error al enviar. Intentá de nuevo.
+          </p>
+        }
 
         <!-- Botón -->
         <button
           type="submit"
-          [disabled]="form.invalid"
-          class="btn-glow w-full"
-          [class.opacity-40]="form.invalid"
+          [disabled]="form.invalid || loading()"
+          class="w-full py-3 px-6 rounded-lg font-mono text-sm font-medium
+                 tracking-wider uppercase transition-all duration-300"
+          [class.btn-glow]="form.valid"
+          [class.opacity-30]="form.invalid"
           [class.cursor-not-allowed]="form.invalid"
+          [class.cursor-pointer]="form.valid"
+          style="border: 1px solid"
+          [style.borderColor]="form.valid ? 'rgba(110,231,247,0.6)' : 'rgba(255,255,255,0.1)'"
+          [style.color]="form.valid ? '#6EE7F7' : 'rgba(255,255,255,0.3)'"
         >
-          Enviar mensaje
+          @if (loading()) {
+            <span class="flex items-center justify-center gap-2">
+              <span class="animate-pulse">●</span> Enviando...
+            </span>
+          } @else if (form.invalid) {
+            Completá el formulario
+          } @else {
+            Enviar mensaje →
+          }
         </button>
 
       </form>
