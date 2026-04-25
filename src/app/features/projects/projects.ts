@@ -15,7 +15,7 @@ import { PortfolioService } from '../../core/services/portfolio';
 export class ProjectsComponent {
   private portfolioService = inject(PortfolioService);
 
-  categories = ['todos', 'backend', 'fullstack', 'devops'];
+  categories = ['todos', 'backend', 'fullstack'];
   activeFilter = signal('todos');
 
   filteredProjects = computed(() => {
