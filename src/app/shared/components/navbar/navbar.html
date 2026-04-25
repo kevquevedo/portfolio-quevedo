@@ -1,0 +1,44 @@
+   <nav
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      [class.bg-deep-bg]="scrolled()"
+      [class.border-b]="scrolled()"
+      [class.border-white/5]="scrolled()"
+    >
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2 font-mono text-accent-cyan text-sm tracking-widest">
+            <img src="/favicon-32x32.png" alt="qdev" class="w-4 h-4" />
+            &lt;/qdev&gt;
+        </a>
+
+        <!-- Links -->
+        <ul class="hidden md:flex items-center gap-8">
+          @for (item of navItems.slice(0, 4); track item.label) {
+            <li>
+              <a
+              [href]="item.href"
+                class="font-mono text-xs tracking-wider uppercase transition-colors duration-300"
+                [class.text-accent-cyan]="activeSection() === item.id"
+                [class.text-white/40]="activeSection() !== item.id"
+              >
+                {{ item.label }}
+              </a>
+            </li>
+            }
+            <!-- Contacto especial -->
+            <li>
+                <a
+                href="#contact"
+                class="font-mono text-xs tracking-wider uppercase px-4 py-2 rounded-full
+                        border border-accent-cyan/40 text-accent-cyan
+                        hover:bg-accent-cyan/10 hover:border-accent-cyan
+                        transition-all duration-300"
+                >
+                Contacto
+                </a>
+            </li>
+        </ul>
+
+      </div>
+    </nav>

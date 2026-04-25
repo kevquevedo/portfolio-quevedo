@@ -1,0 +1,89 @@
+<section id="contact" class="py-32 px-4 max-w-4xl mx-auto">
+
+  <!-- Header -->
+  <div appScrollReveal class="mb-16 text-center">
+    <p class="font-mono text-accent-cyan text-xs tracking-[0.3em] uppercase mb-3">
+      — Contacto
+    </p>
+    <h2 class="font-display text-5xl font-bold">
+      Hablemos <span class="gradient-text">juntos</span>
+    </h2>
+    <p class="text-white/40 mt-4 font-body">
+      ¿Tenés un proyecto en mente? Me encantaría escucharte.
+    </p>
+  </div>
+
+  <!-- Formulario -->
+  <div appScrollReveal>
+    @if (!sent()) {
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="glass-card p-8 space-y-6">
+
+        <!-- Nombre -->
+        <div>
+          <label class="font-mono text-xs tracking-wider uppercase text-white/40 block mb-2">
+            Nombre
+          </label>
+          <input
+            formControlName="name"
+            type="text"
+            placeholder="Tu nombre"
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3
+                   text-white placeholder-white/20 font-body
+                   focus:outline-none focus:border-accent-cyan/50
+                   transition-colors duration-300"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="font-mono text-xs tracking-wider uppercase text-white/40 block mb-2">
+            Email
+          </label>
+          <input
+            formControlName="email"
+            type="email"
+            placeholder="tu@email.com"
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3
+                   text-white placeholder-white/20 font-body
+                   focus:outline-none focus:border-accent-cyan/50
+                   transition-colors duration-300"
+          />
+        </div>
+
+        <!-- Mensaje -->
+        <div>
+          <label class="font-mono text-xs tracking-wider uppercase text-white/40 block mb-2">
+            Mensaje
+          </label>
+          <textarea
+            formControlName="message"
+            rows="5"
+            placeholder="Contame sobre tu proyecto..."
+            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3
+                   text-white placeholder-white/20 font-body resize-none
+                   focus:outline-none focus:border-accent-cyan/50
+                   transition-colors duration-300"
+          ></textarea>
+        </div>
+
+        <!-- Botón -->
+        <button
+          type="submit"
+          [disabled]="form.invalid"
+          class="btn-glow w-full"
+          [class.opacity-40]="form.invalid"
+          [class.cursor-not-allowed]="form.invalid"
+        >
+          Enviar mensaje
+        </button>
+
+      </form>
+    } @else {
+      <div class="glass-card p-12 text-center">
+        <p class="gradient-text font-display text-3xl font-bold mb-4">¡Mensaje enviado!</p>
+        <p class="text-white/40 font-body">Te respondo a la brevedad.</p>
+      </div>
+    }
+  </div>
+
+</section>

@@ -1,0 +1,77 @@
+<section id="projects" class="py-32 px-4 max-w-6xl mx-auto">
+
+  <!-- Header -->
+  <div appScrollReveal class="mb-16">
+    <p class="font-mono text-accent-cyan text-xs tracking-[0.3em] uppercase mb-3">
+      — Trabajos
+    </p>
+    <h2 class="font-display text-5xl font-bold">
+      Proyectos <span class="gradient-text">destacados</span>
+    </h2>
+  </div>
+
+  <!-- Filtros -->
+  <div appScrollReveal class="flex flex-wrap gap-3 mb-12">
+    @for (cat of categories; track cat) {
+      <button
+        (click)="setFilter(cat)"
+        class="font-mono text-xs tracking-wider uppercase px-4 py-2 rounded-full
+               border transition-all duration-300"
+        [class.border-accent-cyan]="activeFilter() === cat"
+        [class.text-accent-cyan]="activeFilter() === cat"
+        [class.bg-accent-cyan/10]="activeFilter() === cat"
+        [class.border-white/10]="activeFilter() !== cat"
+        [class.text-white/40]="activeFilter() !== cat"
+      >
+        {{ cat }}
+      </button>
+    }
+  </div>
+
+  <!-- Grid de proyectos -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    @for (project of filteredProjects(); track project.id) {
+      <div appScrollReveal>
+        <app-glass-card [clickable]="true">
+
+          <span class="font-mono text-xs tracking-wider text-accent-cyan/70 uppercase mb-4 block">
+            {{ project.category }}
+          </span>
+
+          <h3 class="font-display text-xl font-semibold text-white mb-3">
+            {{ project.title }}
+          </h3>
+
+          <p class="text-white/50 text-sm leading-relaxed mb-6">
+            {{ project.description }}
+          </p>
+
+          <!-- Tech stack -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            @for (tech of project.tech; track tech) {
+              <app-tech-badge [name]="tech" />
+            }
+          </div>
+
+          <!-- Links -->
+          <div class="flex gap-4">
+            @if (project.githubUrl) {
+              <a [href]="project.githubUrl" target="_blank"
+                 class="font-mono text-xs text-white/40 hover:text-accent-cyan transition-colors duration-200">
+                GitHub →
+              </a>
+            }
+            @if (project.liveUrl) {
+              <a [href]="project.liveUrl" target="_blank"
+                 class="font-mono text-xs text-white/40 hover:text-accent-cyan transition-colors duration-200">
+                Live →
+              </a>
+            }
+          </div>
+
+        </app-glass-card>
+      </div>
+    }
+  </div>
+
+</section>
