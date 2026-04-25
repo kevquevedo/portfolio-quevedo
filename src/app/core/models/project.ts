@@ -11,6 +11,6 @@ export interface Project {
 
 export interface Skill {
   name:     string;
-  level:    number;   // 0-100
-  category: 'languages' | 'frameworks' | 'databases' | 'devops' | 'tools';
+  level:    number;
+  category: 'languages' | 'frameworks' | 'databases' | 'devops' | 'tools' | 'mainframe';
 }

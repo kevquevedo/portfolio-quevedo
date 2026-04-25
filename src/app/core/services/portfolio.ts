@@ -38,13 +38,35 @@ export class PortfolioService {
   ]);
 
   skills = signal<Skill[]>([
-    { name: 'Node.js',     level: 90, category: 'frameworks' },
-    { name: 'PostgreSQL',  level: 85, category: 'databases'  },
-    { name: 'Docker',      level: 80, category: 'devops'     },
-    { name: 'TypeScript',  level: 85, category: 'languages'  },
-    { name: 'Python',      level: 75, category: 'languages'  },
-    { name: 'Redis',       level: 70, category: 'databases'  },
-    { name: 'Kubernetes',  level: 65, category: 'devops'     },
-    { name: 'Go',          level: 60, category: 'languages'  },
+    // Mainframe
+    { name: 'COBOL Batch',      level: 95, category: 'mainframe' },
+    { name: 'JCL',              level: 90, category: 'mainframe' },
+    { name: 'zScope/ISPF',      level: 90, category: 'mainframe' },
+    { name: 'IBM File Manager', level: 90, category: 'mainframe' },
+    { name: 'Control-M',        level: 85, category: 'mainframe' },
+    { name: 'BMC Remedy',       level: 80, category: 'mainframe' },
+    { name: 'COBOL CICS',       level: 80, category: 'mainframe' },
+    { name: 'DB2',              level: 75, category: 'mainframe' },
+
+    // Lenguajes
+    { name: 'JavaScript',  level: 75, category: 'languages' },
+    { name: 'TypeScript',  level: 75, category: 'languages' },
+    { name: 'Python',      level: 50, category: 'languages' },
+
+    // Frontend
+    { name: 'Angular',      level: 75, category: 'frameworks' },
+    { name: 'HTML / CSS',   level: 80, category: 'frameworks' },
+    { name: 'Tailwind CSS', level: 80, category: 'frameworks' },
+    { name: 'Ionic',        level: 55, category: 'frameworks' },
+
+    // Bases de datos
+    { name: 'Teradata', level: 80, category: 'databases' },
+    { name: 'MySQL',    level: 60, category: 'databases' },
+
+    // Herramientas
+    { name: 'JIRA',     level: 85, category: 'tools' },
+    { name: 'GitHub',   level: 75, category: 'tools' },
+    { name: 'Firebase', level: 70, category: 'tools' },
+
   ]);
 }

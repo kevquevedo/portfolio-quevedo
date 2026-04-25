@@ -1,46 +1,53 @@
-<section id="skills" class="py-32 px-4 max-w-6xl mx-auto">
+<div class="relative w-full overflow-hidden">
 
-  <!-- Header -->
-  <div appScrollReveal class="mb-16">
-    <p class="font-mono text-accent-cyan text-xs tracking-[0.3em] uppercase mb-3">
-      — Tecnologías
-    </p>
-    <h2 class="font-display text-5xl font-bold">
-      Mi <span class="gradient-text">stack</span>
-    </h2>
+  <!-- Dot grid de fondo -->
+  <div class="absolute inset-0 pointer-events-none"
+       style="background-image: radial-gradient(circle, rgba(110,231,247,0.15) 1.5px, transparent 1px);
+              background-size: 32px 32px;
+              mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+              -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);">
   </div>
 
-  <!-- Grid de categorías -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    @for (cat of categories; track cat.id) {
-      <div appScrollReveal class="glass-card p-8">
+  <!-- Contenido de la sección -->
+  <section id="skills" class="relative py-32 px-4 max-w-6xl mx-auto z-10">
 
-        <h3 class="font-mono text-xs tracking-[0.3em] uppercase text-accent-cyan/70 mb-6">
-          {{ cat.label }}
-        </h3>
+    <!-- Header -->
+    <div appScrollReveal class="mb-16">
+      <p class="font-mono text-accent-cyan text-xs tracking-[0.3em] uppercase mb-3">
+        — Tecnologías
+      </p>
+      <h2 class="font-display text-5xl font-bold">
+        Mi <span class="gradient-text">stack</span>
+      </h2>
+    </div>
 
-        <div class="space-y-4">
-          @for (skill of getSkillsByCategory(cat.id); track skill.name) {
-            <div>
-              <!-- Nombre y nivel -->
-              <div class="flex justify-between mb-2">
-                <span class="font-body text-sm text-white/70">{{ skill.name }}</span>
-                <span class="font-mono text-xs text-accent-cyan/60">{{ skill.level }}%</span>
-              </div>
-              <!-- Barra de progreso -->
-              <div class="h-px bg-white/10 rounded-full overflow-hidden">
-                <div
+    <!-- Grid de categorías -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      @for (cat of categories; track cat.id) {
+        <div appScrollReveal class="glass-card p-8">
+          <h3 class="font-mono text-xs tracking-[0.3em] uppercase text-accent-cyan/70 mb-6">
+            {{ cat.label }}
+          </h3>
+          <div class="space-y-4">
+            @for (skill of getSkillsByCategory(cat.id); track skill.name) {
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="font-body text-sm text-white/70">{{ skill.name }}</span>
+                  <span class="font-mono text-xs text-accent-cyan/60">{{ skill.level }}%</span>
+                </div>
+                <div class="h-px bg-white/10 rounded-full overflow-hidden">
+                  <div
                     class="h-full rounded-full transition-all duration-1000"
                     [style.width.%]="skill.level"
                     style="background: linear-gradient(90deg, #6EE7F7, #A78BFA)">
+                  </div>
                 </div>
               </div>
-            </div>
-          }
+            }
+          </div>
         </div>
+      }
+    </div>
 
-      </div>
-    }
-  </div>
-
-</section>
+  </section>
+</div>

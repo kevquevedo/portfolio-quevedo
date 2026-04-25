@@ -5,6 +5,7 @@ import { AboutComponent } from './features/about/about';
 import { ProjectsComponent } from './features/projects/projects';
 import { SkillsComponent } from './features/skills/skills';
 import { ContactComponent } from './features/contact/contact';
+import { FooterComponent } from './shared/components/footer/footer';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ContactComponent } from './features/contact/contact';
     ProjectsComponent,
     SkillsComponent,
     ContactComponent,
+    FooterComponent,
   ],
   template: `
     <app-navbar />
@@ -26,6 +28,7 @@ import { ContactComponent } from './features/contact/contact';
       <app-skills />
       <app-contact />
     </main>
+    <app-footer />
   `,
 })
 export class AppComponent {}

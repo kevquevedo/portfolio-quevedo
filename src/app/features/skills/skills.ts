@@ -16,13 +16,15 @@ export class SkillsComponent {
   skills = this.portfolioService.skills;
 
   categories = [
-    { id: 'languages',  label: 'Lenguajes'   },
-    { id: 'frameworks', label: 'Frameworks'  },
+    { id: 'mainframe',  label: 'Mainframe'      },
+    { id: 'frameworks', label: 'Frontend'       },
+    { id: 'languages',  label: 'Lenguajes'      },
     { id: 'databases',  label: 'Bases de datos' },
-    { id: 'devops',     label: 'DevOps'      },
+    { id: 'tools',      label: 'Herramientas'   },
   ];
 
   getSkillsByCategory(category: string) {
     return this.skills().filter(s => s.category === category);
   }
+
 }
