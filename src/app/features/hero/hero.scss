@@ -30,6 +30,54 @@
   50%       { transform: translateY(-20px) translateX(20px); }
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+
+/* Animaciones de entrada */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Clases de entrada */
+.animate-fade-in-down {
+  opacity: 0;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 0.8s ease forwards;
+}
+
 /* Partículas con clases fijas */
 .particle-a { animation: floatA var(--duration) ease-in-out var(--delay) infinite; }
 .particle-b { animation: floatB var(--duration) ease-in-out var(--delay) infinite; }
