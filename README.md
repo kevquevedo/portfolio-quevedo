@@ -65,3 +65,38 @@ Abrí el navegador en `http://localhost:4200/`
 ---
 
 ## 📁 Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── core/
+│   │   ├── models/
+│   │   │   └── project.ts          # Modelo de datos para proyectos
+│   │   └── services/
+│   │       ├── portfolio.ts        # Servicio principal de datos
+│   │       └── theme.ts            # Servicio de manejo de tema
+│   ├── features/
+│   │   ├── about/                  # Sección "Sobre mí"
+│   │   ├── contact/                # Sección de contacto con EmailJS
+│   │   ├── hero/                   # Sección principal / landing
+│   │   ├── projects/               # Sección de proyectos
+│   │   └── skills/                 # Sección de habilidades
+│   ├── shared/
+│   │   ├── components/
+│   │   │   ├── footer/             # Componente footer
+│   │   │   ├── glass-card/         # Tarjeta con efecto glassmorphism
+│   │   │   ├── navbar/             # Barra de navegación
+│   │   │   └── tech-badge/         # Badge de tecnologías
+│   │   └── directives/
+│   │       └── scroll-reveal.ts    # Directiva de animación al hacer scroll
+│   ├── app.routes.ts               # Configuración de rutas
+│   └── app.config.ts               # Configuración principal de la app
+├── assets/                         # Imágenes y recursos estáticos
+└── styles.scss                     # Estilos globales
+```
+
+---
+
+## 📄 Licencia
+
+MIT
