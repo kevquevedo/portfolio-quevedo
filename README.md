@@ -1,59 +1,67 @@
-# PortfolioQuevedo
+# 🧑‍💻 Portfolio — Kevin Quevedo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Sitio web de portfolio personal desarrollado con **Angular 21**, **Tailwind CSS** y desplegado en **Firebase Hosting**.
 
-## Development server
+🔗 **Live demo:** [https://portfolio-quevedo.web.app](https://portfolio-quevedo.web.app) ← *reemplazá con tu URL real*
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## ✨ Características
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Diseño responsive adaptado a mobile, tablet y desktop
+- Secciones de presentación, proyectos, habilidades y contacto
+- Formulario de contacto integrado con **EmailJS**
+- Animaciones y transiciones con CSS/SCSS
+- Deploy automático en Firebase Hosting
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Tech Stack
 
-```bash
-ng generate component component-name
-```
+| Tecnología | Versión |
+|---|---|
+| Angular | 21.1.x |
+| Tailwind CSS | 3.4.x |
+| TypeScript | 5.9.x |
+| Firebase / AngularFire | 12.x / 20.x |
+| EmailJS | 4.4.x |
+| Vitest | 4.x |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🚀 Instalación y uso local
 
-## Building
+### Requisitos previos
+- Node.js >= 18
+- npm >= 11
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Pasos
 
 ```bash
-ng test
+# Clonar el repositorio
+git clone https://github.com/kevquevedo/portfolio-quevedo.git
+cd portfolio-quevedo
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm start
 ```
 
-## Running end-to-end tests
+Abrí el navegador en `http://localhost:4200/`
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 📦 Scripts disponibles
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+| Comando | Descripción |
+|---|---|
+| `npm start` | Servidor de desarrollo |
+| `npm run build` | Build de producción |
+| `npm run build:prod` | Build con compilación de Tailwind incluida |
+| `npm test` | Ejecutar tests con Vitest |
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📁 Estructura del proyecto
