@@ -3,7 +3,7 @@ export interface Project {
   title:       string;
   description: string;
   tech:        string[];
-  category:    'backend' | 'fullstack' | 'devops';
+  category:    'backend' | 'fullstack' | 'devops' | 'frontend';
   githubUrl?:  string;
   liveUrl?:    string;
   featured:    boolean;

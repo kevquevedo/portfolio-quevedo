@@ -19,6 +19,16 @@ export class PortfolioService {
     },
     {
       id: 2,
+      title: 'Voisdesigns',
+      description: 'Sitio web para una carpintería de muebles a medida. Desarrollado con Angular y SCSS, con diseño elegante orientado a mostrar servicios y productos artesanales.',
+      tech: ['Angular', 'TypeScript', 'SCSS', 'Vercel'],
+      category: 'frontend',
+      githubUrl: 'https://github.com/kevquevedo/voisdesigns',
+      liveUrl: 'https://voisdesigns.vercel.app',
+      featured: true,
+    },
+    {
+      id: 3,
       title: 'El Buen Comer',
       description: 'App móvil para gestión integral de restaurantes. Administración de pedidos, mesas, empleados y menú con perfiles diferenciados por rol — cliente, empleado y dueño.',
       tech: ['Ionic', 'Angular', 'Firebase', 'TypeScript'],
@@ -27,7 +37,7 @@ export class PortfolioService {
       featured: true,
     },
     {
-      id: 3,
+      id: 4,
       title: 'Clínica Quevedo',
       description: 'Sistema web para gestión de clínica médica. Turnos online, perfiles de paciente, especialista y administrador, verificación de email y deploy en producción.',
       tech: ['Angular', 'TypeScript', 'Firebase', 'HTML / CSS'],
@@ -37,7 +47,7 @@ export class PortfolioService {
       featured: true,
     },
     {
-      id: 4,
+      id: 5,
       title: 'Sala de Juegos',
       description: 'Aplicación web con múltiples juegos interactivos. Desarrollada con Angular y Firebase, incluye autenticación de usuarios y registro de puntuaciones.',
       tech: ['Angular', 'TypeScript', 'Firebase', 'HTML / CSS'],
